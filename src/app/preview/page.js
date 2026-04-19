@@ -45,16 +45,46 @@ export default function PreviewPage() {
 		);
 	}
 
+	async function waitForImages(container) {
+		const images = Array.from(container.querySelectorAll("img"));
+
+		await Promise.all(
+			images.map((img) => {
+				if (img.complete) return Promise.resolve();
+
+				return new Promise((resolve) => {
+					img.onload = resolve;
+					img.onerror = resolve;
+				});
+			}),
+		);
+	}
+
 	async function handlePrintPreview() {
 		const previewElement = document.getElementById("preview");
 
 		if (!previewElement) return;
 
 		try {
+			await waitForImages(previewElement);
+			await new Promise((resolve) => setTimeout(resolve, 300));
+
+			if (document.fonts?.ready) {
+				await document.fonts.ready;
+			}
+
+			const isMobile = window.innerWidth < 768;
+
 			const canvas = await html2canvas(previewElement, {
 				backgroundColor: null,
 				useCORS: true,
-				scale: 2,
+				allowTaint: false,
+				scale: isMobile ? 1 : 2,
+				width: 1080,
+				height: 1350,
+				windowWidth: 1080,
+				windowHeight: 1350,
+				logging: false,
 			});
 
 			const image = canvas.toDataURL("image/png");
