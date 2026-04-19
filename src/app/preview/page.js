@@ -156,11 +156,11 @@ export default function PreviewPage() {
 					) : null}
 
 					<div className="absolute max-w-[100%] inset-x-[15%] bottom-[11%] flex items-center justify-between">
-						<div className="flex w-20 justify-center">
+						<div className="flex w-20 max-w-[188px] justify-center">
 							<img
 								src={homeTeam.logo}
 								alt={homeTeam.name}
-								className="max-h-24 w-20 object-contain"
+								className="max-h-24 w-20 max-w-[188px] object-contain"
 							/>
 						</div>
 
@@ -189,11 +189,11 @@ export default function PreviewPage() {
 							</p>
 						</div>
 
-						<div className="flex w-20 justify-center">
+						<div className="flex w-20 max-w-[188px] justify-center">
 							<img
 								src={awayTeam.logo}
 								alt={awayTeam.name}
-								className="max-h-24 w-20 object-contain"
+								className="max-h-24 w-20 max-w-[188px] object-contain"
 							/>
 						</div>
 					</div>
