@@ -67,7 +67,7 @@ export default function PreviewPage() {
 
 		try {
 			await waitForImages(previewElement);
-			await new Promise((resolve) => setTimeout(resolve, 300));
+			await new Promise((resolve) => setTimeout(resolve, 400));
 
 			if (document.fonts?.ready) {
 				await document.fonts.ready;
@@ -79,19 +79,38 @@ export default function PreviewPage() {
 				backgroundColor: null,
 				useCORS: true,
 				allowTaint: false,
-				scale: isMobile ? 1 : 2,
-				width: 1080,
-				height: 1350,
-				windowWidth: 1080,
-				windowHeight: 1350,
+				scale: 1,
 				logging: false,
 			});
 
-			const image = canvas.toDataURL("image/png");
-			const link = document.createElement("a");
-			link.href = image;
-			link.download = "placar.png";
-			link.click();
+			canvas.toBlob(
+				(blob) => {
+					if (!blob) {
+						alert(
+							"Não foi possível gerar a imagem neste dispositivo.",
+						);
+						return;
+					}
+
+					const blobUrl = URL.createObjectURL(blob);
+
+					if (isMobile) {
+						window.open(blobUrl, "_blank");
+						return;
+					}
+
+					const link = document.createElement("a");
+					link.href = blobUrl;
+					link.download = "placar.png";
+					link.click();
+
+					setTimeout(() => {
+						URL.revokeObjectURL(blobUrl);
+					}, 1000);
+				},
+				"image/png",
+				1,
+			);
 		} catch (error) {
 			console.error("Erro ao gerar imagem:", error);
 			alert(
