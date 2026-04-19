@@ -1,0 +1,396 @@
+[
+	{
+		"id": "academico-de-viseu",
+		"name": "Academico de Viseu",
+		"league": "segunda-liga",
+		"logo": "/clubs/academico.png",
+		"isB": false
+	},
+	{
+		"id": "benfica-b",
+		"name": "Benfica B",
+		"league": "segunda-liga",
+		"logo": "/clubs/benfica-b.png",
+		"isB": true
+	},
+	{
+		"id": "gd-chaves",
+		"name": "GD Chaves",
+		"league": "segunda-liga",
+		"logo": "/clubs/gd-chaves.png",
+		"isB": false
+	},
+	{
+		"id": "farense",
+		"name": "Farense",
+		"league": "segunda-liga",
+		"logo": "/clubs/farense.png",
+		"isB": false
+	},
+	{
+		"id": "pacos-de-ferreira",
+		"name": "Paços de Ferreira",
+		"league": "segunda-liga",
+		"logo": "/clubs/pacos-de-ferreira.png",
+		"isB": false
+	},
+	{
+		"id": "feirense",
+		"name": "Feirense",
+		"league": "segunda-liga",
+		"logo": "/clubs/feirense.png",
+		"isB": false
+	},
+	{
+		"id": "felgueiras",
+		"name": "Felgueiras",
+		"league": "segunda-liga",
+		"logo": "/clubs/felgueiras.png",
+		"isB": false
+	},
+	{
+		"id": "uniao-de-leiria",
+		"name": "União de Leiria",
+		"league": "segunda-liga",
+		"logo": "/clubs/uniao-de-leiria.png",
+		"isB": false
+	},
+	{
+		"id": "leixoes",
+		"name": "Leixões",
+		"league": "segunda-liga",
+		"logo": "/clubs/leixoes.png",
+		"isB": false
+	},
+	{
+		"id": "lusitania-de-lourosa",
+		"name": "Lusitânia",
+		"league": "segunda-liga",
+		"logo": "/clubs/lourosa.png",
+		"isB": false
+	},
+	{
+		"id": "maritimo",
+		"name": "Marítimo",
+		"league": "segunda-liga",
+		"logo": "/clubs/maritimo.png",
+		"isB": false
+	},
+	{
+		"id": "oliveirense",
+		"name": "Oliveirense",
+		"league": "segunda-liga",
+		"logo": "/clubs/oliveirense.png",
+		"isB": false
+	},
+	{
+		"id": "penafiel",
+		"name": "Penafiel",
+		"league": "segunda-liga",
+		"logo": "/clubs/penafiel.png",
+		"isB": false
+	},
+	{
+		"id": "portimonense",
+		"name": "Portimonense",
+		"league": "segunda-liga",
+		"logo": "/clubs/portimonense.png",
+		"isB": false
+	},
+	{
+		"id": "porto-b",
+		"name": "Porto B",
+		"league": "segunda-liga",
+		"logo": "/clubs/porto-b.png",
+		"isB": true
+	},
+	{
+		"id": "sporting-b",
+		"name": "Sporting B",
+		"league": "segunda-liga",
+		"logo": "/clubs/sporting-b.png",
+		"isB": true
+	},
+	{
+		"id": "torreense",
+		"name": "Torreense",
+		"league": "segunda-liga",
+		"logo": "/clubs/torreense.png",
+		"isB": false
+	},
+	{
+		"id": "vizela",
+		"name": "Vizela",
+		"league": "segunda-liga",
+		"logo": "/clubs/vizela.png",
+		"isB": false
+	},
+
+	{
+		"id": "1-dezembro",
+		"name": "1º Dezembro",
+		"league": "liga-3",
+		"logo": "/clubs/1-dezembro.png",
+		"isB": false
+	},
+	{
+		"id": "academica-de-coimbra",
+		"name": "Académica de Coimbra",
+		"league": "liga-3",
+		"logo": "/clubs/academica.png",
+		"isB": false
+	},
+	{
+		"id": "amora",
+		"name": "Amora",
+		"league": "liga-3",
+		"logo": "/clubs/amora.png",
+		"isB": false
+	},
+	{
+		"id": "atletico-cp",
+		"name": "Atlético CP",
+		"league": "liga-3",
+		"logo": "/clubs/atletico-cp.png",
+		"isB": false
+	},
+	{
+		"id": "caldas",
+		"name": "Caldas",
+		"league": "liga-3",
+		"logo": "/clubs/caldas.png",
+		"isB": false
+	},
+	{
+		"id": "sporting-da-covilha",
+		"name": "Sporting da Covilha",
+		"league": "liga-3",
+		"logo": "/clubs/covilha.png",
+		"isB": false
+	},
+	{
+		"id": "lusitano-de-evora",
+		"name": "Lusitano de Évora",
+		"league": "liga-3",
+		"logo": "/clubs/lusitano.png",
+		"isB": false
+	},
+	{
+		"id": "mafra",
+		"name": "Mafra",
+		"league": "liga-3",
+		"logo": "/clubs/mafra.png",
+		"isB": false
+	},
+	{
+		"id": "belenenses",
+		"name": "Belenenses",
+		"league": "liga-3",
+		"logo": "/clubs/belenenses.png",
+		"isB": false
+	},
+	{
+		"id": "uniao-de-santarem",
+		"name": "União de Santarém",
+		"league": "liga-3",
+		"logo": "/clubs/ud-santarem.png",
+		"isB": false
+	},
+	{
+		"id": "marco-09",
+		"name": "Marco 09",
+		"league": "liga-3",
+		"logo": "/clubs/marco-09.png",
+		"isB": false
+	},
+	{
+		"id": "amarante",
+		"name": "Amarante",
+		"league": "liga-3",
+		"logo": "/clubs/amarante.png",
+		"isB": false
+	},
+	{
+		"id": "braga-b",
+		"name": "Braga B",
+		"league": "liga-3",
+		"logo": "/clubs/braga-b.png",
+		"isB": true
+	},
+	{
+		"id": "fafe",
+		"name": "Fafe",
+		"league": "liga-3",
+		"logo": "/clubs/fafe.png",
+		"isB": false
+	},
+	{
+		"id": "vitoria-sc-b",
+		"name": "Vitória SC B",
+		"league": "liga-3",
+		"logo": "/clubs/vitoria-sc-b.png",
+		"isB": true
+	},
+	{
+		"id": "paredes",
+		"name": "Paredes",
+		"league": "liga-3",
+		"logo": "/clubs/paredes.png",
+		"isB": false
+	},
+	{
+		"id": "sao-joao-de-ver",
+		"name": "São João de Ver",
+		"league": "liga-3",
+		"logo": "/clubs/sjv.png",
+		"isB": false
+	},
+	{
+		"id": "sanjoanense",
+		"name": "Sanjoanense",
+		"league": "liga-3",
+		"logo": "/clubs/sanjoanense.png",
+		"isB": false
+	},
+	{
+		"id": "trofense",
+		"name": "Trofense",
+		"league": "liga-3",
+		"logo": "/clubs/trofense.png",
+		"isB": false
+	},
+	{
+		"id": "varzim",
+		"name": "Varzim",
+		"league": "liga-3",
+		"logo": "/clubs/varzim.png",
+		"isB": false
+	},
+
+	{
+		"id": "avs",
+		"name": "AVS",
+		"league": "primeira-liga",
+		"logo": "/clubs/avs.png",
+		"isB": false
+	},
+	{
+		"id": "alverca",
+		"name": "Alverca",
+		"league": "primeira-liga",
+		"logo": "/clubs/alverca.png",
+		"isB": false
+	},
+	{
+		"id": "arouca",
+		"name": "Arouca",
+		"league": "primeira-liga",
+		"logo": "/clubs/arouca.png",
+		"isB": false
+	},
+	{
+		"id": "benfica",
+		"name": "Benfica",
+		"league": "primeira-liga",
+		"logo": "/clubs/benfica.png",
+		"isB": false
+	},
+	{
+		"id": "braga",
+		"name": "Braga",
+		"league": "primeira-liga",
+		"logo": "/clubs/braga.png",
+		"isB": false
+	},
+	{
+		"id": "casa-pia",
+		"name": "Casa Pia",
+		"league": "primeira-liga",
+		"logo": "/clubs/casa-pia.png",
+		"isB": false
+	},
+	{
+		"id": "estoril-praia",
+		"name": "Estoril Praia",
+		"league": "primeira-liga",
+		"logo": "/clubs/estoril.png",
+		"isB": false
+	},
+	{
+		"id": "estrela-da-amadora",
+		"name": "Estrela da Amadora",
+		"league": "primeira-liga",
+		"logo": "/clubs/estrela.png",
+		"isB": false
+	},
+	{
+		"id": "famalicao",
+		"name": "Famalicão",
+		"league": "primeira-liga",
+		"logo": "/clubs/famalicao.png",
+		"isB": false
+	},
+	{
+		"id": "gil-vicente",
+		"name": "Gil Vicente",
+		"league": "primeira-liga",
+		"logo": "/clubs/gil-vicente.png",
+		"isB": false
+	},
+	{
+		"id": "moreirense",
+		"name": "Moreirense",
+		"league": "primeira-liga",
+		"logo": "/clubs/moreirense.png",
+		"isB": false
+	},
+	{
+		"id": "nacional",
+		"name": "Nacional",
+		"league": "primeira-liga",
+		"logo": "/clubs/nacional.png",
+		"isB": false
+	},
+	{
+		"id": "porto",
+		"name": "Porto",
+		"league": "primeira-liga",
+		"logo": "/clubs/porto.png",
+		"isB": false
+	},
+	{
+		"id": "rio-ave",
+		"name": "Rio Ave",
+		"league": "primeira-liga",
+		"logo": "/clubs/rio-ave.png",
+		"isB": false
+	},
+	{
+		"id": "santa-clara",
+		"name": "Santa Clara",
+		"league": "primeira-liga",
+		"logo": "/clubs/santa-clara.png",
+		"isB": false
+	},
+	{
+		"id": "sporting",
+		"name": "Sporting",
+		"league": "primeira-liga",
+		"logo": "/clubs/sporting.png",
+		"isB": false
+	},
+	{
+		"id": "tondela",
+		"name": "Tondela",
+		"league": "primeira-liga",
+		"logo": "/clubs/tondela.png",
+		"isB": false
+	},
+	{
+		"id": "vitoria-sc",
+		"name": "Vitória SC",
+		"league": "primeira-liga",
+		"logo": "/clubs/vitoria-sc.png",
+		"isB": false
+	}
+]

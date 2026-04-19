@@ -1,0 +1,32 @@
+[
+	{
+		"id": "primeira-liga",
+		"name": "Primeira Liga",
+		"overlay": "/overlays/primeira-liga.png",
+		"type": "regular"
+	},
+	{
+		"id": "segunda-liga",
+		"name": "Segunda Liga",
+		"overlay": "/overlays/segunda-liga.png",
+		"type": "regular"
+	},
+	{
+		"id": "liga-3",
+		"name": "Liga 3",
+		"overlay": "/overlays/liga-3.png",
+		"type": "regular"
+	},
+	{
+		"id": "campeonato-portugal",
+		"name": "Campeonato de Portugal",
+		"overlay": "/overlays/campeonato-portugal.png",
+		"type": "regular"
+	},
+	{
+		"id": "taca-portugal",
+		"name": "Taça de Portugal",
+		"overlay": "/overlays/taca-portugal.png",
+		"type": "cup"
+	}
+]
