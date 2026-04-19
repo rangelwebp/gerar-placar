@@ -155,7 +155,7 @@ export default function PreviewPage() {
 						</div>
 					) : null}
 
-					<div className="absolute max-w-[75%] inset-x-[18%] bottom-[11%] flex items-center justify-between">
+					<div className="absolute max-w-[100%] inset-x-[15%] bottom-[11%] flex items-center justify-between">
 						<div className="flex w-20 justify-center">
 							<img
 								src={homeTeam.logo}
@@ -198,7 +198,7 @@ export default function PreviewPage() {
 						</div>
 					</div>
 
-					<div className="absolute max-w-[62%] inset-x-[18%] bottom-[3%] flex items-center justify-between gap-4 text-[11px] font-bold uppercase tracking-[0.12em] text-white">
+					<div className="absolute max-w-[100%] inset-x-[15%] bottom-[3%] flex items-center justify-between gap-4 text-[11px] font-bold uppercase tracking-[0.12em] text-white">
 						<p
 							className="max-w-[50%] text-[10px] text-left"
 							style={{
