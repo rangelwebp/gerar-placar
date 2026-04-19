@@ -160,7 +160,7 @@ export default function PreviewPage() {
 							<img
 								src={homeTeam.logo}
 								alt={homeTeam.name}
-								className="max-h-24 w-20 max-w-[188px] object-contain"
+								className="max-h-[188px] max-w-[188px] w-20  object-contain"
 							/>
 						</div>
 
@@ -193,7 +193,7 @@ export default function PreviewPage() {
 							<img
 								src={awayTeam.logo}
 								alt={awayTeam.name}
-								className="max-h-24 w-20 max-w-[188px] object-contain"
+								className="max-h-[188px] max-w-[188px] w-20 object-contain"
 							/>
 						</div>
 					</div>
