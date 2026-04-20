@@ -160,30 +160,30 @@ export default function PreviewPage() {
 							<img
 								src={homeTeam.logo}
 								alt={homeTeam.name}
-								className="max-h-[188px] max-w-[188px] w-20  object-contain"
+								className="w-16  object-contain"
 							/>
 						</div>
 
 						<div className="flex flex-col items-center text-center">
 							<p
-								className="text-[9px] font-bold uppercase -tracking-widest] text-white/90"
+								className="text-[7px] font-bold uppercase text-white"
 								style={{
-									fontFamily: "var(--font-sora)",
+									fontFamily: "var(--font-special-gothic)",
 								}}>
 								{/* {formData.headline} */}
 								{formData.round}
 							</p>
 
 							<h1
-								className="mt-0 mb-0 text-[50px] font-black leading-none tracking-tight text-white"
+								className="mt-0 mb-0 text-[48px] font-black leading-none tracking-tight text-white"
 								style={{ fontFamily: "var(--font-sora)" }}>
 								{formData.score}
 							</h1>
 
 							<p
-								className="mt-0 text-[9px] font-bold uppercase -tracking-widest] text-white"
+								className="mt-0 text-[7px] font-bold uppercase text-white"
 								style={{
-									fontFamily: "var(--font-sora)",
+									fontFamily: "var(--font-special-gothic)",
 								}}>
 								{selectedLeague?.name}
 							</p>
@@ -193,7 +193,7 @@ export default function PreviewPage() {
 							<img
 								src={awayTeam.logo}
 								alt={awayTeam.name}
-								className="max-h-[188px] max-w-[188px] w-20 object-contain"
+								className="w-16 object-contain"
 							/>
 						</div>
 					</div>
