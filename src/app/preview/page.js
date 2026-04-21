@@ -82,7 +82,7 @@ export default function PreviewPage() {
 						/>
 					</div>
 
-					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-6 sm:p-8 md:p-10">
+					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 sm:p-8 md:p-10">
 						<div id="selectedLeague" className="w-full">
 							<div className="flex items-center justify-between gap-3">
 								<div
@@ -130,7 +130,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-14 w-14 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
@@ -167,7 +167,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-14 w-14 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
