@@ -311,14 +311,14 @@
 	},
 	{
 		"id": "estoril-praia",
-		"name": "Estoril Praia",
+		"name": "Estoril",
 		"league": "primeira-liga",
 		"logo": "/clubs/estoril.png",
 		"isB": false
 	},
 	{
 		"id": "estrela-da-amadora",
-		"name": "Estrela da Amadora",
+		"name": "Estrela Amadora",
 		"league": "primeira-liga",
 		"logo": "/clubs/estrela.png",
 		"isB": false

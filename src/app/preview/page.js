@@ -115,7 +115,7 @@ export default function PreviewPage() {
 								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
 									<img
 										src={homeTeam.logo}
-										className="w-14 shrink-0 object-contain sm:w-16"
+										className="w-12 shrink-0 object-contain sm:w-14"
 										alt={homeTeam.name}
 									/>
 
@@ -152,7 +152,7 @@ export default function PreviewPage() {
 								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
 									<img
 										src={awayTeam.logo}
-										className="w-14 shrink-0 object-contain sm:w-16"
+										className="w-12 shrink-0 object-contain sm:w-14"
 										alt={awayTeam.name}
 									/>
 
