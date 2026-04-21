@@ -3,30 +3,35 @@
 		"id": "primeira-liga",
 		"name": "Primeira Liga",
 		"overlay": "/overlays/primeira-liga.png",
-		"type": "regular"
+		"type": "regular",
+		"baseColor": "#260310"
 	},
 	{
 		"id": "segunda-liga",
 		"name": "Segunda Liga",
 		"overlay": "/overlays/segunda-liga.png",
-		"type": "regular"
+		"type": "regular",
+		"baseColor": "#067a5e"
 	},
 	{
 		"id": "liga-3",
 		"name": "Liga 3",
 		"overlay": "/overlays/liga-3.png",
-		"type": "regular"
+		"type": "regular",
+		"baseColor": "#4B04C7"
 	},
 	{
 		"id": "campeonato-portugal",
 		"name": "Campeonato de Portugal",
 		"overlay": "/overlays/campeonato-portugal.png",
-		"type": "regular"
+		"type": "regular",
+		"baseColor": "#CA8E0E"
 	},
 	{
 		"id": "taca-portugal",
 		"name": "Taça de Portugal",
 		"overlay": "/overlays/taca-portugal.png",
-		"type": "cup"
+		"type": "cup",
+		"baseColor": "#0A7F8E"
 	}
 ]

@@ -2,7 +2,6 @@
 
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
-import html2canvas from "html2canvas";
 import clubs from "@/data/clubs.json";
 import leagues from "@/data/leagues.json";
 import { useMatchArt } from "@/context/match-art-context";
@@ -26,6 +25,10 @@ export default function PreviewPage() {
 		[formData.league],
 	);
 
+	const [homeScore = "0", awayScore = "0"] = (formData.score || "0-0").split(
+		"-",
+	);
+
 	if (!formData.league || !homeTeam || !awayTeam || !formData.imageSrc) {
 		return (
 			<main className="flex min-h-screen items-center justify-center bg-zinc-950 px-4 text-white">
@@ -45,80 +48,6 @@ export default function PreviewPage() {
 		);
 	}
 
-	async function waitForImages(container) {
-		const images = Array.from(container.querySelectorAll("img"));
-
-		await Promise.all(
-			images.map((img) => {
-				if (img.complete) return Promise.resolve();
-
-				return new Promise((resolve) => {
-					img.onload = resolve;
-					img.onerror = resolve;
-				});
-			}),
-		);
-	}
-
-	async function handlePrintPreview() {
-		const previewElement = document.getElementById("preview");
-
-		if (!previewElement) return;
-
-		try {
-			await waitForImages(previewElement);
-			await new Promise((resolve) => setTimeout(resolve, 400));
-
-			if (document.fonts?.ready) {
-				await document.fonts.ready;
-			}
-
-			const isMobile = window.innerWidth < 768;
-
-			const canvas = await html2canvas(previewElement, {
-				backgroundColor: null,
-				useCORS: true,
-				allowTaint: false,
-				scale: 1,
-				logging: false,
-			});
-
-			canvas.toBlob(
-				(blob) => {
-					if (!blob) {
-						alert(
-							"Não foi possível gerar a imagem neste dispositivo.",
-						);
-						return;
-					}
-
-					const blobUrl = URL.createObjectURL(blob);
-
-					if (isMobile) {
-						window.open(blobUrl, "_blank");
-						return;
-					}
-
-					const link = document.createElement("a");
-					link.href = blobUrl;
-					link.download = "placar.png";
-					link.click();
-
-					setTimeout(() => {
-						URL.revokeObjectURL(blobUrl);
-					}, 1000);
-				},
-				"image/png",
-				1,
-			);
-		} catch (error) {
-			console.error("Erro ao gerar imagem:", error);
-			alert(
-				"Não foi possível gerar a imagem automaticamente neste dispositivo.",
-			);
-		}
-	}
-
 	function handleNewImage() {
 		resetForm();
 		router.push("/");
@@ -126,11 +55,11 @@ export default function PreviewPage() {
 
 	return (
 		<main className="min-h-screen bg-zinc-950 px-3 py-4 text-white">
-			<div className="mx-auto flex w-full max-w-md flex-col items-center gap-4">
+			<div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-4">
 				<div
 					id="preview"
 					className="relative w-full overflow-hidden bg-black shadow-2xl"
-					style={{ aspectRatio: "1080 / 1350" }}>
+					style={{ aspectRatio: "4 / 5" }}>
 					<div className="absolute inset-0">
 						<img
 							src={formData.imageSrc}
@@ -143,93 +72,124 @@ export default function PreviewPage() {
 						/>
 					</div>
 
-					<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50" />
+					<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/80" />
 
-					{selectedLeague?.overlay ? (
-						<div className="absolute inset-0">
-							<img
-								src={selectedLeague.overlay}
-								alt={selectedLeague.name}
-								className="h-full w-full object-cover"
-							/>
-						</div>
-					) : null}
-
-					<div className="absolute max-w-[100%] inset-x-[15%] bottom-[11%] flex items-center justify-between">
-						<div className="flex w-20 max-w-[188px] justify-center">
-							<img
-								src={homeTeam.logo}
-								alt={homeTeam.name}
-								className="w-16  object-contain"
-							/>
-						</div>
-
-						<div className="flex flex-col items-center text-center">
-							<p
-								className="text-[7px] font-bold uppercase text-white"
-								style={{
-									fontFamily: "var(--font-special-gothic)",
-								}}>
-								{/* {formData.headline} */}
-								{formData.round}
-							</p>
-
-							<h1
-								className="mt-0 mb-0 text-[48px] font-black leading-none tracking-tight text-white"
-								style={{ fontFamily: "var(--font-sora)" }}>
-								{formData.score}
-							</h1>
-
-							<p
-								className="mt-0 text-[7px] font-bold uppercase text-white"
-								style={{
-									fontFamily: "var(--font-special-gothic)",
-								}}>
-								{selectedLeague?.name}
-							</p>
-						</div>
-
-						<div className="flex w-20 max-w-[188px] justify-center">
-							<img
-								src={awayTeam.logo}
-								alt={awayTeam.name}
-								className="w-16 object-contain"
-							/>
-						</div>
+					<div className="absolute inset-0">
+						<img
+							src="/overlays/overlay-padrao.png"
+							alt="Overlay padrão"
+							className="h-full w-full object-cover"
+						/>
 					</div>
 
-					<div className="absolute max-w-[100%] inset-x-[15%] bottom-[3%] flex items-center justify-between gap-4 text-[11px] font-bold uppercase tracking-[0.12em] text-white">
-						<p
-							className="max-w-[50%] text-[10px] text-left"
-							style={{
-								fontFamily: "var(--font-sora)",
-							}}>
-							{homeTeam.name}
-						</p>
-						{/* <p
-							className="text-center text-[10px]"
-							style={{
-								fontFamily: "var(--font-sora)",
-							}}>
-							{formData.round}
-						</p> */}
-						<p
-							className="max-w-[50%] text-[10px] text-right"
-							style={{
-								fontFamily: "var(--font-sora)",
-							}}>
-							{awayTeam.name}
-						</p>
+					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-6 sm:p-8 md:p-10">
+						<div id="selectedLeague" className="w-full">
+							<div className="flex items-center justify-between gap-3">
+								<div
+									className="px-3 py-1 text-[11px] uppercase text-white sm:text-sm"
+									style={{
+										backgroundColor:
+											selectedLeague?.baseColor ||
+											"#16a34a",
+										fontFamily:
+											"var(--font-special-gothic)",
+									}}>
+									{selectedLeague?.name}
+								</div>
+
+								<div className="h-px flex-1 bg-white/30" />
+
+								<div
+									className="text-[11px] uppercase text-white sm:text-sm"
+									style={{
+										fontFamily:
+											"var(--font-special-gothic)",
+									}}>
+									{formData.round}
+								</div>
+							</div>
+						</div>
+
+						<div id="homeTeam">
+							<div className="flex items-center justify-between gap-3">
+								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
+									<img
+										src={homeTeam.logo}
+										className="w-14 shrink-0 object-contain sm:w-16"
+										alt={homeTeam.name}
+									/>
+
+									<p
+										className="truncate text-2xl uppercase sm:text-3xl md:text-4xl"
+										style={{
+											fontFamily:
+												"var(--font-special-gothic)",
+										}}>
+										{homeTeam.name}
+									</p>
+								</div>
+
+								<div
+									className="flex h-14 w-14 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									style={{
+										backgroundColor:
+											selectedLeague?.baseColor ||
+											"#16a34a",
+									}}>
+									<p
+										className="text-4xl leading-none text-white sm:text-5xl"
+										style={{
+											fontFamily: "var(--font-sora)",
+										}}>
+										{homeScore}
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div id="awayTeam">
+							<div className="flex items-center justify-between gap-3">
+								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
+									<img
+										src={awayTeam.logo}
+										className="w-14 shrink-0 object-contain sm:w-16"
+										alt={awayTeam.name}
+									/>
+
+									<p
+										className="truncate text-2xl uppercase sm:text-3xl md:text-4xl"
+										style={{
+											fontFamily:
+												"var(--font-special-gothic)",
+										}}>
+										{awayTeam.name}
+									</p>
+								</div>
+
+								<div
+									className="flex h-14 w-14 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									style={{
+										backgroundColor:
+											selectedLeague?.baseColor ||
+											"#16a34a",
+									}}>
+									<p
+										className="text-4xl leading-none text-white sm:text-5xl"
+										style={{
+											fontFamily: "var(--font-sora)",
+										}}>
+										{awayScore}
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<div className="sticky bottom-0 z-10 flex w-full flex-col gap-2 rounded-3xl border border-zinc-800 bg-zinc-900/95 p-3 backdrop-blur">
-					<button
-						type="button"
-						onClick={handlePrintPreview}
-						className="w-full rounded-2xl bg-green-500 px-4 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-green-400">
-						Tirar print
-					</button>
+					<div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-zinc-400">
+						Faça o print manual da arte no celular.
+					</div>
 
 					<button
 						type="button"
