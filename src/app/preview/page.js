@@ -82,7 +82,7 @@ export default function PreviewPage() {
 						/>
 					</div>
 
-					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6 sm:p-8 md:p-10">
+					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-4 sm:p-8 md:p-10">
 						<div id="selectedLeague" className="w-full">
 							<div className="flex items-center justify-between gap-3">
 								<div
@@ -115,7 +115,7 @@ export default function PreviewPage() {
 								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
 									<img
 										src={homeTeam.logo}
-										className="w-12 shrink-0 object-contain sm:w-14"
+										className="w-10 shrink-0 object-contain sm:w-14"
 										alt={homeTeam.name}
 									/>
 
@@ -130,7 +130,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-12 sm:w-12"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
@@ -152,7 +152,7 @@ export default function PreviewPage() {
 								<div className="flex min-w-0 items-center gap-3 sm:gap-4">
 									<img
 										src={awayTeam.logo}
-										className="w-12 shrink-0 object-contain sm:w-14"
+										className="w-10 shrink-0 object-contain sm:w-14"
 										alt={awayTeam.name}
 									/>
 
@@ -167,7 +167,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16"
+									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-12 sm:w-12"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
