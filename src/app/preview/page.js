@@ -86,7 +86,7 @@ export default function PreviewPage() {
 						<div id="selectedLeague" className="w-full">
 							<div className="flex items-center justify-between gap-3">
 								<div
-									className="px-3 py-1 text-[11px] uppercase text-white sm:text-sm"
+									className="px-2 text-[11px] uppercase text-white sm:text-sm"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
@@ -120,7 +120,7 @@ export default function PreviewPage() {
 									/>
 
 									<p
-										className="truncate text-2xl uppercase sm:text-3xl md:text-4xl"
+										className="truncate text-lg uppercase sm:text-3xl md:text-4xl"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -130,7 +130,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-12 sm:w-12"
+									className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-10 sm:w-10"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
@@ -157,7 +157,7 @@ export default function PreviewPage() {
 									/>
 
 									<p
-										className="truncate text-2xl uppercase sm:text-3xl md:text-4xl"
+										className="truncate text-lg uppercase sm:text-xl md:text-4xl"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -167,7 +167,7 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-12 sm:w-12"
+									className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-10 sm:w-10"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
