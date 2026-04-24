@@ -139,7 +139,7 @@ export default function PreviewPage() {
 									<p
 										className="text-4xl leading-none text-white sm:text-5xl"
 										style={{
-											fontFamily: "var(--font-sora)",
+											fontFamily: "var(--special-gothic)",
 										}}>
 										{homeScore}
 									</p>
@@ -176,7 +176,7 @@ export default function PreviewPage() {
 									<p
 										className="text-4xl leading-none text-white sm:text-5xl"
 										style={{
-											fontFamily: "var(--font-sora)",
+											fontFamily: "var(--special-gothic)",
 										}}>
 										{awayScore}
 									</p>
