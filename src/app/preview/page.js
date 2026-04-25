@@ -130,14 +130,14 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-10 sm:w-10"
+									className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
 											"#16a34a",
 									}}>
 									<p
-										className="text-4xl leading-none text-white sm:text-5xl"
+										className="text-3xl leading-none text-white"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -168,14 +168,14 @@ export default function PreviewPage() {
 								</div>
 
 								<div
-									className="flex h-10 w-10 shrink-0 items-center justify-center sm:h-10 sm:w-10"
+									className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
 											"#16a34a",
 									}}>
 									<p
-										className="text-4xl leading-none text-white sm:text-5xl"
+										className="text-3xl leading-none text-white sm:text-5xl"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
