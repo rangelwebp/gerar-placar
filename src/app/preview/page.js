@@ -82,11 +82,11 @@ export default function PreviewPage() {
 						/>
 					</div>
 
-					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-5">
+					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 py-6">
 						<div id="selectedLeague" className="w-full">
 							<div className="flex items-center justify-between gap-3">
 								<div
-									className="px-2 text-[11px] uppercase text-white sm:text-sm"
+									className="px-2 py-0.5 text-[11px] uppercase text-white sm:text-sm"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
