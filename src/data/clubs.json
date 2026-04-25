@@ -1,7 +1,7 @@
 [
 	{
 		"id": "academico-de-viseu",
-		"name": "Academico de Viseu",
+		"name": "Acadêmico de Viseu",
 		"league": "segunda-liga",
 		"logo": "/clubs/academico.png",
 		"isB": false
@@ -191,7 +191,7 @@
 	},
 	{
 		"id": "uniao-de-santarem",
-		"name": "União de Santarém",
+		"name": "UD Santarém",
 		"league": "liga-3",
 		"logo": "/clubs/ud-santarem.png",
 		"isB": false
