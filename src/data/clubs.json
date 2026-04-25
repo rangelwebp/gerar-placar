@@ -64,7 +64,7 @@
 	},
 	{
 		"id": "lusitania-de-lourosa",
-		"name": "Lusitânia",
+		"name": "L. Lourosa",
 		"league": "segunda-liga",
 		"logo": "/clubs/lourosa.png",
 		"isB": false
@@ -135,7 +135,7 @@
 	},
 	{
 		"id": "academica-de-coimbra",
-		"name": "Acadêmica de Coimbra",
+		"name": "Acadêmica",
 		"league": "liga-3",
 		"logo": "/clubs/academica.png",
 		"isB": false
@@ -163,7 +163,7 @@
 	},
 	{
 		"id": "sporting-da-covilha",
-		"name": "Sporting da Covilhã",
+		"name": "SC Covilhã",
 		"league": "liga-3",
 		"logo": "/clubs/covilha.png",
 		"isB": false
