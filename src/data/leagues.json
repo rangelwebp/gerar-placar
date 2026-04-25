@@ -4,7 +4,7 @@
 		"name": "Primeira Liga",
 		"overlay": "/overlays/primeira-liga.png",
 		"type": "regular",
-		"baseColor": "#260310"
+		"baseColor": "#8C0034"
 	},
 	{
 		"id": "segunda-liga",
