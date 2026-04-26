@@ -7,6 +7,7 @@ import leagues from "@/data/leagues.json";
 import { useNewsArt } from "@/context/match-art-context";
 import { getFilteredClubsByLeague } from "@/lib/clubs";
 import { formatScoreInput, isValidScore } from "@/lib/score";
+import BackButton from "@/components/back-button";
 
 const HEADLINE_OPTIONS = [
 	"RESULTADO FINAL",
@@ -122,6 +123,9 @@ export default function HomePage() {
 	return (
 		<>
 			<main className="min-h-screen bg-zinc-950 px-4 py-6 text-white">
+				<div className="mb-4">
+					<BackButton fallbackHref="/" />
+				</div>
 				<div className="mx-auto w-full max-w-xl">
 					<div className="mb-6">
 						<span className="mb-3 inline-flex rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
