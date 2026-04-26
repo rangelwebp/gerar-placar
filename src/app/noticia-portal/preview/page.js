@@ -14,7 +14,7 @@ export default function NoticiaPortalPreview() {
 		[newsArt.league],
 	);
 
-	if (!newsArt.title || !newsArt.league || !newsArt.imageSrc) {
+	if (!newsArt.title || !newsArt.league || !newsArt.croppedImage) {
 		return (
 			<main className="flex min-h-screen items-center justify-center bg-zinc-950 px-4 text-white">
 				<div className="w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-900 p-6 text-center">
@@ -109,15 +109,11 @@ export default function NoticiaPortalPreview() {
 						</div>
 
 						{/* Imagem principal */}
-						<figure className="w-full">
+						<figure className="w-full h-full">
 							<img
-								src={newsArt.imageSrc}
+								src={newsArt.croppedImage}
 								alt="Imagem da notícia"
 								className="h-full w-full object-cover"
-								style={{
-									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
-									transform: `scale(${newsArt.zoom})`,
-								}}
 							/>
 						</figure>
 					</div>
