@@ -113,7 +113,7 @@ export default function NoticiaPortalPreview() {
 							<img
 								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
-								className="h-48 w-full object-cover"
+								className="h-full w-full object-cover"
 								style={{
 									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
 									transform: `scale(${newsArt.zoom})`,
