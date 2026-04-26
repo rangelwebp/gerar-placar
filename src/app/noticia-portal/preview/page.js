@@ -132,7 +132,7 @@ export default function NoticiaPortalPreview() {
 									selectedLeague?.baseColor || "#067a5e",
 								fontFamily: "var(--font-special-gothic)",
 							}}>
-							<p className="text-sm uppercase tracking-[0.2em] text-white">
+							<p className="text-xs uppercase tracking-[0.2em] text-white">
 								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
@@ -154,7 +154,7 @@ export default function NoticiaPortalPreview() {
 								className="text-4xl leading-tight text-zinc-950"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 500,
+									fontWeight: 600,
 								}}>
 								{newsArt.title}
 							</p>
@@ -163,7 +163,7 @@ export default function NoticiaPortalPreview() {
 								className="mb-6 text-2xl font-light text-zinc-500"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 200,
+									fontWeight: 300,
 								}}>
 								{newsArt.subtitle}
 							</p>
