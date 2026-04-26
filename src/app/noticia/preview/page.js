@@ -60,12 +60,12 @@ export default function NoticiaPreviewPage() {
 					<div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/80" />
 
 					<div
-						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[32%]"
+						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[33%]"
 						style={{
-							backdropFilter: "blur(4px)",
-							WebkitBackdropFilter: "blur(4px)",
+							backdropFilter: "blur(5px)",
+							WebkitBackdropFilter: "blur(5px)",
 							background:
-								"linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 100%)",
+								"linear-gradient(to top, rgba(0,0,0,0.83) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 100%)",
 						}}
 					/>
 
@@ -92,7 +92,10 @@ export default function NoticiaPreviewPage() {
 
 						<h1
 							className="max-w-[90%] text-2xl leading-tight text-white"
-							style={{ fontFamily: "var(--font-sora)" }}>
+							style={{
+								fontFamily: "var(--font-sora)",
+								fontWeight: 600,
+							}}>
 							{newsArt.title}
 						</h1>
 					</div>
