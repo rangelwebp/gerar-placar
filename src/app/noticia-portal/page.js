@@ -219,9 +219,9 @@ export default function NoticiaPortalForm() {
 								// </button>
 								<button
 									type="button"
-									onClick={handleConfirmCrop}
-									className="mt-4 w-full rounded-2xl bg-green-500 px-4 py-4 text-sm font-extrabold uppercase text-white transition hover:bg-green-400">
-									Confirmar enquadramento
+									onClick={() => setIsCropOpen(true)}
+									className="mt-4 w-full rounded-2xl border border-zinc-700 bg-zinc-800 px-4 py-4 text-sm font-extrabold uppercase text-white transition hover:border-green-500 hover:text-white">
+									Ajustar enquadramento
 								</button>
 							) : null}
 						</Field>
