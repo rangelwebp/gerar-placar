@@ -6,6 +6,7 @@ import Cropper from "react-easy-crop";
 import leagues from "@/data/leagues.json";
 import { useNewsArt } from "@/context/match-art-context";
 import BackButton from "@/components/back-button";
+import { getCroppedImage } from "@/lib/get-cropped-image";
 
 export default function NoticiaPortalForm() {
 	const router = useRouter();
@@ -50,9 +51,9 @@ export default function NoticiaPortalForm() {
 		reader.onload = () => {
 			if (typeof reader.result !== "string") return;
 
-			setType("noticia-portal");
 			updateFields({
 				imageSrc: reader.result,
+				croppedImage: "",
 				crop: { x: 0, y: 0 },
 				zoom: 1,
 				croppedAreaPixels: null,
@@ -77,6 +78,8 @@ export default function NoticiaPortalForm() {
 		if (!newsArt.subtitle.trim()) return "Informe o subtítulo.";
 		if (!newsArt.league) return "Selecione a liga.";
 		if (!newsArt.imageSrc) return "Envie a imagem de fundo.";
+		if (!newsArt.croppedImage)
+			return "Ajuste e confirme o enquadramento da imagem.";
 		return "";
 	}
 
@@ -94,6 +97,24 @@ export default function NoticiaPortalForm() {
 
 		setError("");
 		router.push("/noticia-portal/preview");
+	}
+
+	async function handleConfirmCrop() {
+		try {
+			if (!newsArt.imageSrc || !newsArt.croppedAreaPixels) return;
+
+			const croppedImage = await getCroppedImage(
+				newsArt.imageSrc,
+				newsArt.croppedAreaPixels,
+			);
+
+			updateField("croppedImage", croppedImage);
+			setIsCropOpen(false);
+			setError("");
+		} catch (error) {
+			console.error(error);
+			setError("Não foi possível processar o recorte da imagem.");
+		}
 	}
 
 	return (
@@ -190,11 +211,17 @@ export default function NoticiaPortalForm() {
 							) : null}
 
 							{newsArt.imageSrc ? (
+								// <button
+								// 	type="button"
+								// 	onClick={() => setIsCropOpen(true)}
+								// 	className="mt-3 w-full rounded-2xl border border-zinc-700 bg-zinc-800 px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-green-500 hover:text-white">
+								// 	Ajustar enquadramento
+								// </button>
 								<button
 									type="button"
-									onClick={() => setIsCropOpen(true)}
-									className="mt-3 w-full rounded-2xl border border-zinc-700 bg-zinc-800 px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-green-500 hover:text-white">
-									Ajustar enquadramento
+									onClick={handleConfirmCrop}
+									className="mt-4 w-full rounded-2xl bg-green-500 px-4 py-4 text-sm font-extrabold uppercase text-white transition hover:bg-green-400">
+									Confirmar enquadramento
 								</button>
 							) : null}
 						</Field>
