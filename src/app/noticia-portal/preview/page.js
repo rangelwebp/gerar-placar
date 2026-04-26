@@ -109,7 +109,7 @@ export default function NoticiaPortalPreview() {
 						</div>
 
 						{/* Imagem principal */}
-						<figure className="w-full h-full">
+						<figure className="w-full h-[766px]">
 							<img
 								src={newsArt.croppedImage}
 								alt="Imagem da notícia"
