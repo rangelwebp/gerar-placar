@@ -141,7 +141,7 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col gap-6 px-48 py-48"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-6 py-2 text-xs uppercase tracking-[0.2em] text-white"
+								className="inline-block px-6 py-2 text-[10px] uppercase tracking-[0.2em] text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
