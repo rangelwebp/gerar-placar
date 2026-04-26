@@ -7,19 +7,27 @@ export async function getCroppedImage(imageSrc, pixelCrop) {
 		throw new Error("Não foi possível obter o contexto do canvas.");
 	}
 
-	canvas.width = pixelCrop.width;
-	canvas.height = pixelCrop.height;
+	const cropX = Math.round(pixelCrop.x);
+	const cropY = Math.round(pixelCrop.y);
+	const cropWidth = Math.round(pixelCrop.width);
+	const cropHeight = Math.round(pixelCrop.height);
+
+	canvas.width = cropWidth;
+	canvas.height = cropHeight;
+
+	context.imageSmoothingEnabled = true;
+	context.imageSmoothingQuality = "high";
 
 	context.drawImage(
 		image,
-		pixelCrop.x,
-		pixelCrop.y,
-		pixelCrop.width,
-		pixelCrop.height,
+		cropX,
+		cropY,
+		cropWidth,
+		cropHeight,
 		0,
 		0,
-		pixelCrop.width,
-		pixelCrop.height,
+		cropWidth,
+		cropHeight,
 	);
 
 	return canvas.toDataURL("image/png");
