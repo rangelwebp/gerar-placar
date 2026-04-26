@@ -8,6 +8,7 @@ const initialState = {
 	type: null, // "placar" | "noticia" | "noticia-portal"
 	// placar
 	league: "",
+	croppedImage: "",
 	homeTeamId: "",
 	awayTeamId: "",
 	headline: "RESULTADO FINAL",
