@@ -185,15 +185,11 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="w-full h-[766px]">
+						<figure className="w-full h-[766px] overflow-hidden">
 							<img
-								src={newsArt.imageSrc}
+								src={newsArt.croppedImage || newsArt.imageSrc}
 								alt="Imagem da notícia"
 								className="h-full w-full object-cover"
-								style={{
-									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
-									transform: `scale(${newsArt.zoom})`,
-								}}
 							/>
 						</figure>
 					</div>
