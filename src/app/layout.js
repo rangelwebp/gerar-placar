@@ -4,7 +4,7 @@ import { Sora, Special_Gothic_Expanded_One } from "next/font/google";
 
 const sora = Sora({
 	subsets: ["latin"],
-	weight: ["800"],
+	weight: ["200", "500", "600"], // Light, Medium, ExtraBold
 	variable: "--font-sora",
 	display: "swap",
 });

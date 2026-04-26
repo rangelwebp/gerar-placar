@@ -4,11 +4,11 @@ import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import clubs from "@/data/clubs.json";
 import leagues from "@/data/leagues.json";
-import { useMatchArt } from "@/context/match-art-context";
+import { useNewsArt } from "@/context/match-art-context";
 
 export default function PreviewPage() {
 	const router = useRouter();
-	const { formData, resetForm } = useMatchArt();
+	const { newsArt: formData, reset } = useNewsArt();
 
 	const homeTeam = useMemo(
 		() => clubs.find((club) => club.id === formData.homeTeamId),
@@ -49,7 +49,7 @@ export default function PreviewPage() {
 	}
 
 	function handleNewImage() {
-		resetForm();
+		reset();
 		router.push("/");
 	}
 
@@ -175,7 +175,7 @@ export default function PreviewPage() {
 											"#16a34a",
 									}}>
 									<p
-										className="text-3xl leading-none text-white sm:text-5xl"
+										className="text-3xl leading-none text-white"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",

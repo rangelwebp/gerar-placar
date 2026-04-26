@@ -1,66 +1,80 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+
+const NewsArtContext = createContext();
 
 const initialState = {
+	type: null, // "placar" | "noticia" | "noticia-portal"
+	// placar
 	league: "",
 	homeTeamId: "",
 	awayTeamId: "",
 	headline: "RESULTADO FINAL",
 	round: "",
 	score: "",
+	// noticia
+	title: "",
+	subtitle: "",
+	// geral
 	imageSrc: "",
 	crop: { x: 0, y: 0 },
 	zoom: 1,
 	croppedAreaPixels: null,
 };
 
-const MatchArtContext = createContext(null);
+function reducer(state, action) {
+	switch (action.type) {
+		case "SET_TYPE":
+			return { ...state, type: action.payload };
+		case "UPDATE_FIELD":
+			return { ...state, [action.field]: action.value };
+		case "UPDATE_FIELDS":
+			return { ...state, ...action.fields };
+		case "RESET":
+			return initialState;
+		default:
+			return state;
+	}
+}
 
-export function MatchArtProvider({ children }) {
-	const [formData, setFormData] = useState(initialState);
+export function NewsArtProvider({ children }) {
+	const [state, dispatch] = useReducer(reducer, initialState);
+
+	function setType(type) {
+		dispatch({ type: "SET_TYPE", payload: type });
+	}
 
 	function updateField(field, value) {
-		setFormData((prev) => ({
-			...prev,
-			[field]: value,
-		}));
+		dispatch({ type: "UPDATE_FIELD", field, value });
 	}
 
-	function updateFields(values) {
-		setFormData((prev) => ({
-			...prev,
-			...values,
-		}));
+	function updateFields(fields) {
+		dispatch({ type: "UPDATE_FIELDS", fields });
 	}
 
-	function resetForm() {
-		setFormData(initialState);
+	function reset() {
+		dispatch({ type: "RESET" });
 	}
-
-	const value = useMemo(
-		() => ({
-			formData,
-			updateField,
-			updateFields,
-			resetForm,
-		}),
-		[formData],
-	);
 
 	return (
-		<MatchArtContext.Provider value={value}>
+		<NewsArtContext.Provider
+			value={{
+				newsArt: state,
+				setType,
+				updateField,
+				updateFields,
+				reset,
+			}}>
 			{children}
-		</MatchArtContext.Provider>
+		</NewsArtContext.Provider>
 	);
 }
 
-export function useMatchArt() {
-	const context = useContext(MatchArtContext);
-
+export function useNewsArt() {
+	const context = useContext(NewsArtContext);
 	if (!context) {
-		throw new Error("useMatchArt must be used inside MatchArtProvider");
+		throw new Error("useNewsArt deve ser usado dentro de NewsArtProvider");
 	}
-
 	return context;
 }
