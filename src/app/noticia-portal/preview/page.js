@@ -7,7 +7,7 @@ import { useNewsArt } from "@/context/match-art-context";
 
 export default function NoticiaPortalPreview() {
 	const router = useRouter();
-	const { newsArt, reset } = useNewsArt();
+	const { newsArt, reset, updateField } = useNewsArt();
 
 	const selectedLeague = useMemo(
 		() => leagues.find((league) => league.id === newsArt.league),
@@ -102,15 +102,14 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="w-full h-full overflow-hidden bg-black">
+						<figure className="relative w-full h-[766px] overflow-hidden bg-black">
 							<img
 								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
-								className="block h-full w-full object-cover"
+								className="absolute left-0 top-0 h-full w-full object-cover"
 								style={{
-									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
-									transform: `scale(${newsArt.zoom})`,
-									transformOrigin: "center",
+									transform: `translateY(${newsArt.imageOffsetY ?? 0}px) scale(${newsArt.zoom ?? 1})`,
+									transformOrigin: "center top",
 								}}
 							/>
 						</figure>
@@ -197,8 +196,29 @@ export default function NoticiaPortalPreview() {
 				</div>
 
 				<div className="sticky bottom-0 z-10 flex w-full max-w-md flex-col gap-2 rounded-3xl border border-zinc-800 bg-zinc-900/95 p-3 backdrop-blur">
-					<div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-zinc-400">
-						Preview 1080x1350 | Print manual no celular
+					<div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-4">
+						<label className="mb-2 block text-sm font-semibold text-zinc-200">
+							Ajuste vertical da imagem
+						</label>
+
+						<input
+							type="range"
+							min={-300}
+							max={300}
+							step={1}
+							value={newsArt.imageOffsetY ?? 0}
+							onChange={(event) =>
+								updateField(
+									"imageOffsetY",
+									Number(event.target.value),
+								)
+							}
+							className="w-full accent-green-500"
+						/>
+
+						<div className="mt-2 text-xs text-zinc-500">
+							Ajuste atual: {newsArt.imageOffsetY ?? 0}px
+						</div>
 					</div>
 
 					<button
