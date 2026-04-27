@@ -56,6 +56,7 @@ export default function NoticiaPortalForm() {
 				crop: { x: 0, y: 0 },
 				zoom: 1,
 				croppedAreaPixels: null,
+				imageOffsetY: 0,
 			});
 
 			setError("");
