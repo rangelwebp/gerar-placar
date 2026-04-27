@@ -6,7 +6,6 @@ import Cropper from "react-easy-crop";
 import leagues from "@/data/leagues.json";
 import { useNewsArt } from "@/context/match-art-context";
 import BackButton from "@/components/back-button";
-import { getCroppedImage } from "@/lib/get-cropped-image";
 
 export default function NoticiaPortalForm() {
 	const router = useRouter();
@@ -78,8 +77,6 @@ export default function NoticiaPortalForm() {
 		if (!newsArt.subtitle.trim()) return "Informe o subtítulo.";
 		if (!newsArt.league) return "Selecione a liga.";
 		if (!newsArt.imageSrc) return "Envie a imagem de fundo.";
-		if (!newsArt.croppedImage)
-			return "Ajuste e confirme o enquadramento da imagem.";
 		return "";
 	}
 
@@ -99,30 +96,13 @@ export default function NoticiaPortalForm() {
 		router.push("/noticia-portal/preview");
 	}
 
-	async function handleConfirmCrop() {
-		try {
-			if (!newsArt.imageSrc || !newsArt.croppedAreaPixels) return;
-
-			const croppedImage = await getCroppedImage(
-				newsArt.imageSrc,
-				newsArt.croppedAreaPixels,
-			);
-
-			updateField("croppedImage", croppedImage);
-			setIsCropOpen(false);
-			setError("");
-		} catch (error) {
-			console.error(error);
-			setError("Não foi possível processar o recorte da imagem.");
-		}
-	}
-
 	return (
 		<>
 			<main className="min-h-screen bg-zinc-950 px-4 py-6 text-white">
 				<div className="mb-4">
 					<BackButton fallbackHref="/" />
 				</div>
+
 				<div className="mx-auto w-full max-w-xl">
 					<div className="mb-6">
 						<span className="mb-3 inline-flex rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
@@ -276,7 +256,7 @@ export default function NoticiaPortalForm() {
 							image={newsArt.imageSrc}
 							crop={newsArt.crop}
 							zoom={newsArt.zoom}
-							aspect={1080 / 766} // Proporção da imagem do seu rascunho
+							aspect={1080 / 766}
 							onCropChange={(value) => updateField("crop", value)}
 							onCropComplete={handleCropComplete}
 							onZoomChange={(value) => updateField("zoom", value)}
@@ -303,7 +283,7 @@ export default function NoticiaPortalForm() {
 
 						<button
 							type="button"
-							onClick={handleConfirmCrop}
+							onClick={() => setIsCropOpen(false)}
 							className="mt-4 w-full rounded-2xl bg-green-500 px-4 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-green-400">
 							Confirmar enquadramento
 						</button>
