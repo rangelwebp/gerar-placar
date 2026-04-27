@@ -123,7 +123,7 @@ export default function NoticiaPortalPreview() {
 				<div className="sr-only">
 					<div
 						id="export-canvas"
-						className="w-[1080px] h-[1350px] overflow-hidden bg-black">
+						className="w-[1080px] h-[1350px] overflow-hidden bg-black border">
 						{/* Mesmo conteúdo, dimensões reais */}
 						<header
 							className="w-full py-6 text-center"
