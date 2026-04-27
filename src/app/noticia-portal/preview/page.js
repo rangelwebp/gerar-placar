@@ -14,7 +14,7 @@ export default function NoticiaPortalPreview() {
 		[newsArt.league],
 	);
 
-	if (!newsArt.title || !newsArt.league || !newsArt.croppedImage) {
+	if (!newsArt.title || !newsArt.league || !newsArt.imageSrc) {
 		return (
 			<main className="flex min-h-screen items-center justify-center bg-zinc-950 px-4 text-white">
 				<div className="w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-900 p-6 text-center">
@@ -39,14 +39,12 @@ export default function NoticiaPortalPreview() {
 	}
 
 	return (
-		<main className="min-h-screen bg-zinc-950 px-3 py-4 text-white font-special">
+		<main className="min-h-screen bg-zinc-950 px-3 py-4 font-special text-white">
 			<div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-4">
-				{/* Preview VISUAL responsiva (grande no celular) */}
 				<div className="w-full max-w-md">
 					<div
-						className="relative w-full overflow-hidden bg-black shadow-2xl border"
+						className="relative w-full overflow-hidden bg-black shadow-2xl"
 						style={{ aspectRatio: "1080 / 1350" }}>
-						{/* Header */}
 						<header
 							className="w-full py-3 text-center"
 							style={{
@@ -59,12 +57,11 @@ export default function NoticiaPortalPreview() {
 							</p>
 						</header>
 
-						{/* Conteúdo */}
 						<div
 							className="flex flex-col items-start gap-2 p-6"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-3 py-1 text-[10px] uppercase text-white"
+								className="inline-block px-3 py-1 text-xs uppercase text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
@@ -77,7 +74,7 @@ export default function NoticiaPortalPreview() {
 								className="text-xl leading-tight text-zinc-950"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 600, // Medium
+									fontWeight: 500,
 								}}>
 								{newsArt.title}
 							</p>
@@ -86,7 +83,7 @@ export default function NoticiaPortalPreview() {
 								className="mb-2 text-sm font-light text-zinc-500"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 200, // Light
+									fontWeight: 200,
 								}}>
 								{newsArt.subtitle}
 							</p>
@@ -108,23 +105,25 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						{/* Imagem principal */}
-						<figure className="w-full h-[766px]">
+						<figure className="w-full h-[766px] overflow-hidden bg-black">
 							<img
-								src={newsArt.croppedImage}
+								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
-								className="h-full w-full object-cover"
+								className="block h-full w-full object-cover"
+								style={{
+									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
+									transform: `scale(${newsArt.zoom})`,
+									transformOrigin: "center",
+								}}
 							/>
 						</figure>
 					</div>
 				</div>
 
-				{/* Container INVISÍVEL para exportação 1080x1350 (futuro) */}
 				<div className="sr-only">
 					<div
 						id="export-canvas"
-						className="w-[1080px] h-[1350px] overflow-hidden bg-black ">
-						{/* Mesmo conteúdo, dimensões reais */}
+						className="h-[1350px] w-[1080px] overflow-hidden bg-black">
 						<header
 							className="w-full py-6 text-center"
 							style={{
@@ -132,7 +131,7 @@ export default function NoticiaPortalPreview() {
 									selectedLeague?.baseColor || "#067a5e",
 								fontFamily: "var(--font-special-gothic)",
 							}}>
-							<p className="text-xs uppercase tracking-[0.2em] text-white">
+							<p className="text-sm uppercase tracking-[0.2em] text-white">
 								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
@@ -141,7 +140,7 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col gap-6 px-48 py-48"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-6 py-2 text-[10px] uppercase tracking-[0.2em] text-white"
+								className="inline-block px-6 py-2 text-xs uppercase tracking-[0.2em] text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
@@ -154,7 +153,7 @@ export default function NoticiaPortalPreview() {
 								className="text-4xl leading-tight text-zinc-950"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 600,
+									fontWeight: 500,
 								}}>
 								{newsArt.title}
 							</p>
@@ -163,7 +162,7 @@ export default function NoticiaPortalPreview() {
 								className="mb-6 text-2xl font-light text-zinc-500"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 300,
+									fontWeight: 200,
 								}}>
 								{newsArt.subtitle}
 							</p>
@@ -185,17 +184,22 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="w-full h-[766px] overflow-hidden">
+						<figure className="w-full h-[766px] overflow-hidden bg-black">
 							<img
-								src={newsArt.croppedImage || newsArt.imageSrc}
-								alt="Pré-visualização da imagem enviada"
-								className="h-56 w-full object-cover"
+								src={newsArt.imageSrc}
+								alt="Imagem da notícia"
+								className="block h-full w-full object-cover"
+								style={{
+									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
+									transform: `scale(${newsArt.zoom})`,
+									transformOrigin: "center",
+								}}
 							/>
 						</figure>
 					</div>
 				</div>
 
-				<div className="sticky bottom-0 z-10 flex w-full flex-col gap-2 rounded-3xl border border-zinc-800 bg-zinc-900/95 p-3 backdrop-blur max-w-md">
+				<div className="sticky bottom-0 z-10 flex w-full max-w-md flex-col gap-2 rounded-3xl border border-zinc-800 bg-zinc-900/95 p-3 backdrop-blur">
 					<div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-zinc-400">
 						Preview 1080x1350 | Print manual no celular
 					</div>
