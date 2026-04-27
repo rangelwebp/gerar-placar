@@ -50,6 +50,7 @@ export default function NoticiaPortalPreview() {
 							style={{
 								backgroundColor:
 									selectedLeague?.baseColor || "#067a5e",
+								fontFamily: "var(--font-sora)",
 							}}>
 							<p className="text-[11px] tracking-widest uppercase text-white">
 								FUTEBOL PORTUGUÊS
@@ -64,6 +65,7 @@ export default function NoticiaPortalPreview() {
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
+									fontFamily: "var(--font-sora)",
 								}}>
 								{selectedLeague?.name}
 							</p>
