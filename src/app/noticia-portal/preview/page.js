@@ -129,9 +129,9 @@ export default function NoticiaPortalPreview() {
 							style={{
 								backgroundColor:
 									selectedLeague?.baseColor || "#067a5e",
-								fontFamily: "var(--font-special-gothic)",
+								fontFamily: "var(--font-sora)",
 							}}>
-							<p className="text-sm uppercase tracking-[0.2em] text-white">
+							<p className="text-[10px] uppercase tracking-[0.2em] text-white">
 								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
@@ -140,11 +140,11 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col gap-6 px-48 py-48"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-6 py-2 text-xs uppercase tracking-[0.2em] text-white"
+								className="inline-block px-6 py-2 text-[10px] uppercase tracking-[0.2em] text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
-									fontFamily: "var(--font-special-gothic)",
+									fontFamily: "var(--font-sora)",
 								}}>
 								{selectedLeague?.name}
 							</p>
