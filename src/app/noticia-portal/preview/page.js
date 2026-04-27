@@ -93,7 +93,7 @@ export default function NoticiaPortalPreview() {
 									className="h-6 w-6 object-contain"
 								/>
 								<p
-									className="text-sm text-zinc-950"
+									className="text-[10px] text-zinc-950"
 									style={{
 										fontWeight: 500,
 									}}>
