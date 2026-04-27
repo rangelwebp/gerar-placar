@@ -44,7 +44,7 @@ export default function NoticiaPortalPreview() {
 				{/* Preview VISUAL responsiva (grande no celular) */}
 				<div className="w-full max-w-md">
 					<div
-						className="relative w-full overflow-hidden bg-black shadow-2xl"
+						className="relative w-full overflow-hidden bg-black shadow-2xl border"
 						style={{ aspectRatio: "1080 / 1350" }}>
 						{/* Header */}
 						<header
@@ -64,7 +64,7 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col items-start gap-2 p-6"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-3 py-1 text-xs uppercase text-white"
+								className="inline-block px-3 py-1 text-[10px] uppercase text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
@@ -77,7 +77,7 @@ export default function NoticiaPortalPreview() {
 								className="text-xl leading-tight text-zinc-950"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 500, // Medium
+									fontWeight: 600, // Medium
 								}}>
 								{newsArt.title}
 							</p>
@@ -123,7 +123,7 @@ export default function NoticiaPortalPreview() {
 				<div className="sr-only">
 					<div
 						id="export-canvas"
-						className="w-[1080px] h-[1350px] overflow-hidden bg-black border">
+						className="w-[1080px] h-[1350px] overflow-hidden bg-black ">
 						{/* Mesmo conteúdo, dimensões reais */}
 						<header
 							className="w-full py-6 text-center"
