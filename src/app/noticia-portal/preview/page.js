@@ -52,8 +52,8 @@ export default function NoticiaPortalPreview() {
 									selectedLeague?.baseColor || "#067a5e",
 								fontFamily: "var(--font-sora)",
 							}}>
-							<p className="text-[10px] uppercase text-white">
-								CAMPEONATO PORTUGUÊS
+							<p className="text-[11px] uppercase text-white">
+								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
 
@@ -61,7 +61,7 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col items-start gap-2 p-6"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-2 py-1 text-[9px] uppercase text-white"
+								className="inline-block px-2 py-1 text-[12px] uppercase text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
@@ -71,7 +71,7 @@ export default function NoticiaPortalPreview() {
 							</p>
 
 							<p
-								className="text-[10px] leading-tight text-zinc-950"
+								className="text-4xl leading-tight text-zinc-950"
 								style={{
 									fontFamily: "var(--font-sora)",
 									fontWeight: 600,
@@ -83,7 +83,7 @@ export default function NoticiaPortalPreview() {
 								className="mb-2 text-sm font-light text-zinc-500"
 								style={{
 									fontFamily: "var(--font-sora)",
-									fontWeight: 200,
+									fontWeight: 300,
 								}}>
 								{newsArt.subtitle}
 							</p>
@@ -95,7 +95,7 @@ export default function NoticiaPortalPreview() {
 									className="h-6 w-6 object-contain"
 								/>
 								<p
-									className="text-xs text-zinc-950"
+									className="text-sm text-zinc-950"
 									style={{
 										fontFamily: "var(--font-sora)",
 										fontWeight: 500,
@@ -105,7 +105,7 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="w-full h-[766px] overflow-hidden bg-black">
+						<figure className="w-full h-full overflow-hidden bg-black">
 							<img
 								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
