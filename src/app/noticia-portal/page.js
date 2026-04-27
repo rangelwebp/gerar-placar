@@ -211,12 +211,6 @@ export default function NoticiaPortalForm() {
 							) : null}
 
 							{newsArt.imageSrc ? (
-								// <button
-								// 	type="button"
-								// 	onClick={() => setIsCropOpen(true)}
-								// 	className="mt-3 w-full rounded-2xl border border-zinc-700 bg-zinc-800 px-4 py-3 text-sm font-semibold text-zinc-100 transition hover:border-green-500 hover:text-white">
-								// 	Ajustar enquadramento
-								// </button>
 								<button
 									type="button"
 									onClick={() => setIsCropOpen(true)}
