@@ -50,9 +50,8 @@ export default function NoticiaPortalPreview() {
 							style={{
 								backgroundColor:
 									selectedLeague?.baseColor || "#067a5e",
-								fontFamily: "var(--font-sora)",
 							}}>
-							<p className="text-[11px] uppercase text-white">
+							<p className="text-[11px] tracking-widest uppercase text-white">
 								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
@@ -65,15 +64,13 @@ export default function NoticiaPortalPreview() {
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
-									fontFamily: "var(--font-sora)",
 								}}>
 								{selectedLeague?.name}
 							</p>
 
 							<p
-								className="text-4xl leading-tight text-zinc-950"
+								className="text-xl leading-tight text-zinc-950"
 								style={{
-									fontFamily: "var(--font-sora)",
 									fontWeight: 600,
 								}}>
 								{newsArt.title}
@@ -82,7 +79,6 @@ export default function NoticiaPortalPreview() {
 							<p
 								className="mb-2 text-sm font-light text-zinc-500"
 								style={{
-									fontFamily: "var(--font-sora)",
 									fontWeight: 300,
 								}}>
 								{newsArt.subtitle}
@@ -97,7 +93,6 @@ export default function NoticiaPortalPreview() {
 								<p
 									className="text-sm text-zinc-950"
 									style={{
-										fontFamily: "var(--font-sora)",
 										fontWeight: 500,
 									}}>
 									por Zona de Acesso
