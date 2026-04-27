@@ -54,7 +54,7 @@ export default function NoticiaPortalForm() {
 				imageSrc: reader.result,
 				croppedImage: "",
 				crop: { x: 0, y: 0 },
-				zoom: 1,
+				zoom: 0,
 				croppedAreaPixels: null,
 				imageOffsetY: 0,
 			});
