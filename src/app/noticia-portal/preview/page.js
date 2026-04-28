@@ -52,7 +52,7 @@ export default function NoticiaPortalPreview() {
 									selectedLeague?.baseColor || "#067a5e",
 								fontFamily: "var(--font-sora)",
 							}}>
-							<p className="text-[11px] tracking-widest uppercase text-white">
+							<p className="text-[11px] uppercase tracking-widest text-white">
 								FUTEBOL PORTUGUÊS
 							</p>
 						</header>
@@ -61,7 +61,7 @@ export default function NoticiaPortalPreview() {
 							className="flex flex-col items-start gap-2 p-6"
 							style={{ backgroundColor: "white" }}>
 							<p
-								className="inline-block px-2 py-1 text-[12px] uppercase text-white"
+								className="inline-block px-2 py-0.5 text-[11px] uppercase text-white"
 								style={{
 									backgroundColor:
 										selectedLeague?.baseColor || "#067a5e",
@@ -102,13 +102,13 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="relative w-full h-[766px] overflow-hidden bg-black">
+						<figure className="relative h-[766px] w-full overflow-hidden bg-black">
 							<img
 								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
 								className="absolute left-0 top-0 h-full w-full object-cover"
 								style={{
-									transform: `translateY(${newsArt.imageOffsetY ?? 0}px) scale(${newsArt.zoom ?? 1})`,
+									transform: `translateY(${newsArt.imageOffsetY ?? 0}px)`,
 									transformOrigin: "center top",
 								}}
 							/>
@@ -180,15 +180,14 @@ export default function NoticiaPortalPreview() {
 							</div>
 						</div>
 
-						<figure className="w-full h-[766px] overflow-hidden bg-black">
+						<figure className="relative h-[766px] w-full overflow-hidden bg-black">
 							<img
 								src={newsArt.imageSrc}
 								alt="Imagem da notícia"
-								className="block h-full w-full object-cover"
+								className="absolute left-0 top-0 h-full w-full object-cover"
 								style={{
-									objectPosition: `${50 + newsArt.crop.x / 8}% ${50 + newsArt.crop.y / 8}%`,
-									transform: `scale(${newsArt.zoom})`,
-									transformOrigin: "center",
+									transform: `translateY(${newsArt.imageOffsetY ?? 0}px)`,
+									transformOrigin: "center top",
 								}}
 							/>
 						</figure>
