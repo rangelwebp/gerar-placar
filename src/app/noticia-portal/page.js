@@ -65,13 +65,6 @@ export default function NoticiaPortalForm() {
 		reader.readAsDataURL(file);
 	}
 
-	const handleCropComplete = useCallback(
-		(_, croppedAreaPixels) => {
-			updateField("croppedAreaPixels", croppedAreaPixels);
-		},
-		[updateField],
-	);
-
 	function validateForm() {
 		if (!newsArt.title.trim()) return "Informe o título principal.";
 		if (!newsArt.subtitle.trim()) return "Informe o subtítulo.";
