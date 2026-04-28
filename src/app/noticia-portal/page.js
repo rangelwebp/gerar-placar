@@ -1,8 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Cropper from "react-easy-crop";
 import leagues from "@/data/leagues.json";
 import { useNewsArt } from "@/context/match-art-context";
 import BackButton from "@/components/back-button";
@@ -54,7 +53,7 @@ export default function NoticiaPortalForm() {
 				imageSrc: reader.result,
 				croppedImage: "",
 				crop: { x: 0, y: 0 },
-				zoom: 0,
+				zoom: 1,
 				croppedAreaPixels: null,
 				imageOffsetY: 0,
 			});
@@ -190,15 +189,6 @@ export default function NoticiaPortalForm() {
 									/>
 								</div>
 							) : null}
-
-							{newsArt.imageSrc ? (
-								<button
-									type="button"
-									onClick={() => setIsCropOpen(true)}
-									className="mt-4 w-full rounded-2xl border border-zinc-700 bg-zinc-800 px-4 py-4 text-sm font-extrabold uppercase text-white transition hover:border-green-500 hover:text-white">
-									Ajustar enquadramento
-								</button>
-							) : null}
 						</Field>
 
 						{selectedLeague?.baseColor ? (
@@ -231,66 +221,6 @@ export default function NoticiaPortalForm() {
 					</form>
 				</div>
 			</main>
-
-			{isCropOpen && newsArt.imageSrc ? (
-				<div className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95">
-					<div className="flex items-center justify-between border-b border-zinc-800 px-4 py-4">
-						<div>
-							<p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
-								Cropper
-							</p>
-							<h2 className="text-lg font-bold text-white">
-								Ajustar imagem
-							</h2>
-						</div>
-
-						<button
-							type="button"
-							onClick={() => setIsCropOpen(false)}
-							className="rounded-xl border border-zinc-700 px-3 py-2 text-sm font-medium text-zinc-200">
-							Fechar
-						</button>
-					</div>
-
-					<div className="relative flex-1">
-						<Cropper
-							image={newsArt.imageSrc}
-							crop={newsArt.crop}
-							zoom={newsArt.zoom}
-							aspect={1080 / 766}
-							onCropChange={(value) => updateField("crop", value)}
-							onCropComplete={handleCropComplete}
-							onZoomChange={(value) => updateField("zoom", value)}
-							showGrid={true}
-						/>
-					</div>
-
-					<div className="border-t border-zinc-800 bg-zinc-950 px-4 py-4">
-						<label className="mb-2 block text-sm font-semibold text-zinc-200">
-							Zoom
-						</label>
-
-						<input
-							type="range"
-							min={1}
-							max={3}
-							step={0.1}
-							value={newsArt.zoom}
-							onChange={(event) =>
-								updateField("zoom", Number(event.target.value))
-							}
-							className="w-full accent-green-500"
-						/>
-
-						<button
-							type="button"
-							onClick={() => setIsCropOpen(false)}
-							className="mt-4 w-full rounded-2xl bg-green-500 px-4 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-green-400">
-							Confirmar enquadramento
-						</button>
-					</div>
-				</div>
-			) : null}
 		</>
 	);
 }
