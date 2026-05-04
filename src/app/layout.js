@@ -1,6 +1,6 @@
 import "./globals.css";
 import Providers from "@/components/providers";
-import { Sora, Special_Gothic_Expanded_One } from "next/font/google";
+import { Sora, Special_Gothic_Expanded_One, Unbounded } from "next/font/google";
 
 const sora = Sora({
 	subsets: ["latin"],
@@ -8,6 +8,13 @@ const sora = Sora({
 	variable: "--font-sora",
 	display: "swap",
 });
+
+// const Unbounded = Unbounded({
+// 	subsets: ["latin"],
+// 	weight: ["300", "400", "500", "600"],
+// 	variable: "--font-special-gothic",
+// 	display: "swap",
+// });
 
 const specialGothicExpandedOne = Special_Gothic_Expanded_One({
 	subsets: ["latin"],

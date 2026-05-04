@@ -97,7 +97,7 @@ export default function PreviewPage() {
 					</div>
 
 					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 px-6 py-7">
-						<div id="selectedLeague" className="w-full">
+						<div id="selectedLeague" className="w-full mb-1">
 							<div className="flex items-center justify-between gap-3">
 								<div
 									className="px-2 py-0.5 text-[10px] uppercase text-white"
