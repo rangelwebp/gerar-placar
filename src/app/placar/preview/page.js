@@ -81,6 +81,10 @@ export default function PreviewPage() {
 							WebkitBackdropFilter: "blur(5px)",
 							background:
 								"linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 100%)",
+							maskImage:
+								"linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0) 100%)",
+							WebkitMaskImage:
+								"linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0) 100%)",
 						}}
 					/>
 
@@ -92,11 +96,11 @@ export default function PreviewPage() {
 						/>
 					</div>
 
-					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 py-6">
+					<div className="absolute inset-x-0 bottom-0 flex flex-col gap-1 px-6 py-7">
 						<div id="selectedLeague" className="w-full">
 							<div className="flex items-center justify-between gap-3">
 								<div
-									className="px-2 py-0.5 text-[11px] uppercase text-white sm:text-sm"
+									className="px-2 py-0.5 text-[10px] uppercase text-white"
 									style={{
 										backgroundColor:
 											selectedLeague?.baseColor ||
@@ -110,7 +114,7 @@ export default function PreviewPage() {
 								<div className="h-px flex-1 bg-white/30" />
 
 								<div
-									className="text-[11px] uppercase text-white sm:text-sm"
+									className="text-[11px] uppercase text-white"
 									style={{
 										fontFamily:
 											"var(--font-special-gothic)",
@@ -122,7 +126,7 @@ export default function PreviewPage() {
 
 						<div id="homeTeam">
 							<div className="flex items-center justify-between gap-3">
-								<div className="flex min-w-0 items-center gap-2 sm:gap-4">
+								<div className="flex min-w-0 items-center gap-1">
 									<img
 										src={homeTeam.logo}
 										className="w-8 shrink-0 object-contain sm:w-14"
@@ -130,7 +134,7 @@ export default function PreviewPage() {
 									/>
 
 									<p
-										className="truncate text-lg uppercase sm:text-3xl md:text-4xl"
+										className="truncate text-xl uppercase"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -147,7 +151,7 @@ export default function PreviewPage() {
 											"#16a34a",
 									}}>
 									<p
-										className="text-3xl leading-none text-white"
+										className="text-2xl leading-none text-white"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -160,7 +164,7 @@ export default function PreviewPage() {
 
 						<div id="awayTeam">
 							<div className="flex items-center justify-between gap-3">
-								<div className="flex min-w-0 items-center gap-2 sm:gap-4">
+								<div className="flex min-w-0 items-center gap-1 sm:gap-4">
 									<img
 										src={awayTeam.logo}
 										className="w-8 shrink-0 object-contain sm:w-14"
@@ -168,7 +172,7 @@ export default function PreviewPage() {
 									/>
 
 									<p
-										className="truncate text-lg uppercase sm:text-xl md:text-4xl"
+										className="truncate text-xl uppercase"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
@@ -185,7 +189,7 @@ export default function PreviewPage() {
 											"#16a34a",
 									}}>
 									<p
-										className="text-3xl leading-none text-white"
+										className="text-2xl leading-none text-white"
 										style={{
 											fontFamily:
 												"var(--font-special-gothic)",
