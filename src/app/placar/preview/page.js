@@ -75,7 +75,7 @@ export default function PreviewPage() {
 					<div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/80" />
 
 					<div
-						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[33%]"
+						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[35%]"
 						style={{
 							backdropFilter: "blur(5px)",
 							WebkitBackdropFilter: "blur(5px)",
