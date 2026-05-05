@@ -60,12 +60,16 @@ export default function NoticiaPreviewPage() {
 					<div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/80" />
 
 					<div
-						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[33%]"
+						className="pointer-events-none absolute inset-x-0 bottom-0 z-[0] h-[35%]"
 						style={{
 							backdropFilter: "blur(5px)",
 							WebkitBackdropFilter: "blur(5px)",
 							background:
-								"linear-gradient(to top, rgba(0,0,0,0.83) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 100%)",
+								"linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 50%, rgba(0,0,0,0) 100%)",
+							maskImage:
+								"linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0) 100%)",
+							WebkitMaskImage:
+								"linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0) 100%)",
 						}}
 					/>
 
@@ -79,7 +83,7 @@ export default function NoticiaPreviewPage() {
 						</div>
 					) : null}
 
-					<div className="absolute inset-x-0 bottom-0 p-6">
+					<div className="absolute inset-x-0 bottom-0 p-8">
 						<div
 							className="mb-2 inline-flex px-3 py-1 text-xs uppercase text-white"
 							style={{
